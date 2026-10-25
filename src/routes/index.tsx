@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BrowserDemo } from "@/components/BrowserDemo";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import {
   PILLARS, THREATS, FEATURES, SURFACES, FILES, PIPELINE, EDITIONS, ENTERPRISE, FAQ, LIMITS,
 } from "@/lib/roe-content";
@@ -35,19 +37,7 @@ function H2({ children, light }: { children: React.ReactNode; light?: boolean })
 function Index() {
   return (
     <div className="min-h-screen">
-      <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-2">
-          <span className="h-3 w-3 rounded-full bg-roe" />
-          <span className="font-display text-xl font-bold">roe</span>
-          <span className="ml-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">by Windsec</span>
-        </div>
-        <nav className="flex items-center gap-6 text-sm">
-          <a href="#how" className="hidden hover:text-roe sm:inline">How it works</a>
-          <a href="#editions" className="hidden hover:text-roe sm:inline">Editions</a>
-          <a href="#faq" className="hidden hover:text-roe sm:inline">FAQ</a>
-          <a href="#install" className="rounded-md border border-navy px-3 py-1.5 hover:bg-cream">Download</a>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <main className="mx-auto max-w-5xl px-6">
         {/* Hero */}
@@ -257,18 +247,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="mt-24">
-        <div className="overflow-hidden bg-navy">
-          <div className="mx-auto flex max-w-5xl items-end justify-between px-6 pt-10">
-            <p className="max-w-xs pb-6 text-sm text-cream/80">Stop hidden prompts before your agent acts on them.</p>
-            <span className="h-4 w-4 rounded-full bg-roe" />
-          </div>
-          <p className="select-none text-center font-display text-[32vw] font-extrabold leading-[0.75] tracking-tighter text-cream">roe</p>
-        </div>
-        <div className="mx-auto flex max-w-5xl justify-between px-6 py-5 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-          <span>© 2026 Windsec</span><span>Roe · AI agent threat visibility</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
